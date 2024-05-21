@@ -1,5 +1,4 @@
-import { icons } from "lucide-react";
-import { CardType } from "./components/horizontal";
+
 
 export const serviceCardData = [
   {

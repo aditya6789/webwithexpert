@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+
 
 export const HorizontalScrollCarousel = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
