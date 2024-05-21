@@ -117,9 +117,9 @@ const HomePage = () => {
 
   return (
     <>
-      <header className="h-screen">
+      <header className="mt-10">
         <ContainerWrapper>
-          <div className="flex flex-col justify-center items-center h-[80vh]">
+          <div className="flex flex-col justify-center items-center  ">
             <div className="md:flex justify-between items-center gap-10">
               <div>
                 <p className="md:text-[18px] font-medium text-red-500">
@@ -207,7 +207,7 @@ const HomePage = () => {
         </ContainerWrapper>
       </section>
       {/* Testimonial  */}
-      <section className="bg-gray-100 mb-10 md:h-[115vh] h-[80vh]  pt-10 mt-20">
+      <section className="bg-gray-100 mb-10 md:h-[115vh] h-[100vh]  pt-10 mt-20">
         <div className="mt-10">
           <ContainerWrapper>
             <div className="flex flex-col justify-center items-center mt-10">

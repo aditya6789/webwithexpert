@@ -30,7 +30,9 @@ const Navbar = () => {
     <nav className="bg-white ">
       <ContainerWrapper>
         <div className="flex justify-between items-center py-5">
+          <Link to={"/"}>
           <img src={Logo} alt="" className="h-12 w-12 md:h-20 md:w-20" />
+          </Link>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? (

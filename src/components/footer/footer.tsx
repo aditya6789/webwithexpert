@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="flex justify-between items-center py-10">
           <img src={Logo} alt="" className="h-20 w-20" />
 
-          <ul className="flex justify-start items-center gap-7">
+          <ul className="md:flex justify-start items-center gap-7">
             {Footerlink.map((data, index) => (
               <Link
                 to={data.href}
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
         <div className="w-full h-[1px] bg-black"></div>
         <div className="py-10">
-          <h1>Copyright © 2024 Webwithexpert Agency</h1>
+          <h1 className="text-sm md:text-xl ">Copyright © 2024 Webwithexpert Agency</h1>
         </div>
       </ContainerWrapper>
     </footer>
