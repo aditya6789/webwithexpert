@@ -1,8 +1,7 @@
-import { WobbleCard } from "./wobblecard";
-import MyMeedbook from "../../public/images/mymeedbook.png";
+
 import EcoBazar from "../../public/images/ecobazar.png";
-import Group from "../../public/images/group.png";
-import TryMyStyle from "../../public/images/trymystyle.png";
+import { WobbleCard } from "./wobblecard";
+
 export function WobbleCardDemo() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
@@ -17,13 +16,13 @@ export function WobbleCardDemo() {
               className="rounded-[50px] w-[100px] h-[100px]"
               alt=""
             />
-            <h1 className="text-4xl font-bold flex items-center">
+            <h1 className="text-xl md:text-4xl font-bold flex items-center">
               <span className="text-blue-300 text-6xl">5+</span>Amazing
               Developers
             </h1>
           </div>
           <div className="flex justify-end items-center gap-10 bg-white shadow-xl rounded-3xl py-5 px-3 mt-10">
-            <h1 className="text-4xl font-bold flex items-center">
+            <h1 className="text-xl md:text-4xl  font-bold flex items-center">
               <span className="text-pink-400 text-6xl">7+</span> Amazing
               Designers
             </h1>

@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+
 import { Link, useLocation } from "react-router-dom";
 import ContainerWrapper from "../containerWrapper";
 import Logo from "../../../public/logo.png";
@@ -39,7 +39,7 @@ const Footer = () => {
                   pathname.pathname === data.href
                     ? "text-black"
                     : "text-gray-400"
-                } text-lg hover:bg-gray-100 p-3 hover:text-black  rounded-xl font-medium`}
+                }text-sm md:text-lg hover:bg-gray-100 p-3 hover:text-black  rounded-xl font-medium`}
               >
                 <li>{data.name}</li>
               </Link>

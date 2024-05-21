@@ -1,6 +1,6 @@
 import { cn } from "../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from 'react-router-dom'
+
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -20,7 +20,7 @@ color:string;
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2  py-10",
+        "lg:grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2  py-10",
         className
       )}
     >
@@ -49,10 +49,10 @@ color:string;
               />
             )}
           </AnimatePresence>
-          <div className={`w-full overflow-hidden relative h-full rounded-2xl text-xl md:text-4xl font-bold text-white flex justify-between items-center`} style={{background:`${item.color}`}}>
+          <div className={`w-full overflow-hidden relative h-full rounded-2xl text-xl md:text-4xl font-bold text-white md:flex justify-between items-center`} style={{background:`${item.color}`}}>
   <div className="p-10">
-    <h1 className="text-black text-4xl font-bold">{item.title}</h1>
-    <p className="text-xl font-medium text-gray-600 mt-10">{item.description}</p>
+    <h1 className="text-black text-xl md:text-4xl font-bold">{item.title}</h1>
+    <p className="text-sm md:text-xl font-medium text-gray-600 mt-10">{item.description}</p>
   </div>
   <img src={item.img} alt={item.title} className="h-full w-[300px]" />
 </div>

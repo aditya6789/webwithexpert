@@ -2,7 +2,7 @@ import { HoverEffect } from "./hoverEffect";
 
 export function CardHoverEffectDemo() {
   return (
-    <div className="w-[1500px] mx-auto px-8">
+    <div className="w-full mx-auto px-8">
       <HoverEffect items={serviceCardData} />
     </div>
   );
