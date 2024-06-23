@@ -14,7 +14,6 @@ import Image4 from "../../public/images/marketing page 4.png";
 import { TabsDemo } from "@/components/tabs";
 import { CardHoverEffectDemo } from "@/components/cardHover";
 import GetConnectBanner from "@/components/banner/getConnectBanner";
-import axios from "axios";
 const ImagesData = [
   { img: Image1 },
   { img: Image2 },
