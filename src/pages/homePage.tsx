@@ -14,6 +14,7 @@ import Image4 from "../../public/images/marketing page 4.png";
 import { TabsDemo } from "@/components/tabs";
 import { CardHoverEffectDemo } from "@/components/cardHover";
 import GetConnectBanner from "@/components/banner/getConnectBanner";
+import axios from "axios";
 const ImagesData = [
   { img: Image1 },
   { img: Image2 },
@@ -122,26 +123,27 @@ const HomePage = () => {
                       action="https://api.web3forms.com/submit"
                       method="POST"
                     >
-                      <input
-                        value={phoneNumber == 0 ? undefined : phoneNumber}
-                        onChange={(e) => setPhoneNumber(+e.target.value)}
-                        type="number"
-                        placeholder="+91XXXXXXXXXX"
-                        name="number"
-                        className="w-full md:w-80 py-3 px-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-0 focus:border-transparent transition-transform transform hover:scale-105 duration-300 !border-r-0 rounded-r-none"
-                      />
+                      <div className="flex items-center">
+                        <input
+                          value={phoneNumber == 0 ? undefined : phoneNumber}
+                          onChange={(e) => setPhoneNumber(+e.target.value)}
+                          type="number"
+                          placeholder="+91XXXXXXXXXX"
+                          name="number"
+                          className="w-full md:w-80 py-3 px-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-0 focus:border-transparent transition-transform transform hover:scale-105 duration-300 !border-r-0 rounded-r-none"
+                        />
+                        <Button
+                          type="submit"
+                          className="py-[25px] md:py-[25px] px-4 md:px-8 shadow-lg bg-red-500 text-xs md:text-md text-white font-semibold rounded-lg transition-transform transform hover:scale-105 duration-300 rounded-l-none"
+                        >
+                          Free Call
+                        </Button>
+                      </div>
                       <input
                         type="hidden"
                         name="access_key"
                         value="ece575e3-c6db-4b8a-a913-6277bb0aa739"
-                      />
-
-                      <Button
-                        type="submit"
-                        className="py-[15px] md:py-[25px] px-4 md:px-8 shadow-lg bg-red-500 text-xs md:text-md text-white font-semibold rounded-lg transition-transform transform hover:scale-105 duration-300 rounded-l-none"
-                      >
-                        Free Call
-                      </Button>
+                      />{" "}
                     </form>
                   </div>
                   <p className="text-[12px] md:text-[16px] font-normal text-red-500 leading-tight max-w-lg mt-2">
