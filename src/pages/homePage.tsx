@@ -141,7 +141,7 @@ const HomePage = () => {
                         type="submit"
                         className="py-[15px] md:py-[25px] px-4 md:px-8 shadow-lg bg-red-500 text-xs md:text-md text-white font-semibold rounded-lg transition-transform transform hover:scale-105 duration-300 rounded-l-none"
                       >
-                        Free Consultation Call
+                        Free Call
                       </Button>
                     </form>
                   </div>
