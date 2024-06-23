@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import ContainerWrapper from "../containerWrapper";
 import Logo from "../../../public/logo.png";
 import { Link, useLocation } from "react-router-dom";
@@ -31,7 +31,10 @@ const Navbar = () => {
       <ContainerWrapper>
         <div className="flex justify-between items-center py-5">
           <Link to={"/"}>
-          <img src={Logo} alt="" className="h-12 w-12 md:h-20 md:w-20" />
+            <div className="flex items-center justify-center gap-4">
+              <img src={Logo} alt="" className="h-10 w-10 md:h-12 md:w-12" />
+              <div className="text-2xl font-semibold">WEBWITHEXPERT</div>
+            </div>
           </Link>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -48,9 +51,7 @@ const Navbar = () => {
                 to={data.href}
                 key={index}
                 className={`${
-                  pathname === data.href
-                    ? "text-black"
-                    : "text-gray-400"
+                  pathname === data.href ? "text-black" : "text-gray-400"
                 } text-lg hover:bg-gray-100 p-3 hover:text-black rounded-xl font-medium`}
               >
                 <li>{data.name}</li>
@@ -67,16 +68,13 @@ const Navbar = () => {
           </ul>
         </div>
         {isMenuOpen && (
-          
           <ul className="md:hidden flex flex-col items-center gap-5 mt-5">
             {navlink.map((data, index) => (
               <Link
                 to={data.href}
                 key={index}
                 className={`${
-                  pathname === data.href
-                    ? "text-black"
-                    : "text-gray-400"
+                  pathname === data.href ? "text-black" : "text-gray-400"
                 } text-lg hover:bg-gray-100 p-3 hover:text-black rounded-xl font-medium`}
                 onClick={() => setIsMenuOpen(false)}
               >

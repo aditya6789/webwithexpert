@@ -10,49 +10,45 @@ export function CardHoverEffectDemo() {
 
 export const serviceCardData = [
   {
-    title: "Web Design",
+    title: "Mobile App Design",
     color: "#fff8f9",
     description:
-      "We design websites that look amazing, convey the right brand message and are highly oriented for conversion.",
+      "We design mobile applications that look stunning, deliver a seamless user experience, and are optimized for conversions.",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/64062922a09751a1098ce054_web-design-agency.png",
   },
   {
-    title: "Web Development",
+    title: "Mobile App Development",
     color: "#eaf2ff",
     description:
-      "We develop fast, perfectly responsive, and SEO-optimized websites built with the best development practices of 2023.",
+      "We develop fast, responsive, and feature-rich mobile applications using the latest development practices of 2023.",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6414a7979cc623601c053b0c_web-development-agency.png",
   },
   {
     title: "UI/UX Design",
     color: "#fff3c9",
-
     description:
-      "We design intuitive web & mobile apps focused on driving user engagement and increasing users retention.",
+      "We design intuitive mobile apps focused on driving user engagement and increasing user retention.",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6414ba53ec407864f180cfe0_ui-ux-design-agency.png",
   },
   {
     title: "Brand Design",
     color: "#f3fef4",
-
     description:
-      "We transform businesses into world-class brands by going through a well thought brand identity design process.",
+      "We transform businesses into world-class brands through a well-thought-out brand identity design process.",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/64062930acab8e66b2e103de_brand-design-agency.png",
   },
   {
-    title: "Conversion Optimization",
+    title: "App Optimization",
     color: "#f0efff",
-
     description:
-      "We help you A/B test your website core landing pages to boost your conversion rates and get more leads.",
+      "We help you A/B test your mobile app to boost your conversion rates and gain more users.",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6414a9110b22bf8cbfe6a1dc_conversion-optimization-agency.png",
   },
   {
-    title: "Automation",
+    title: "App Automation",
     color: "#eaf2ff",
-
     description:
-      "We help your business gain leverage and efficiency through automation using simple, yet powerful NoCode tools.",
+      "We help your business gain efficiency through automation using simple, yet powerful NoCode tools for your mobile applications.",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6526d381da3521c0550eed6f_automation-agency.png",
   },
 ];
