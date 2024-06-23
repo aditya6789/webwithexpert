@@ -84,8 +84,7 @@ export const workwithusData = [
     desc: "We maintain a close relationship and communication with your team to assist with any design or development needs in the long term.",
     color: "#f3fef4",
     img: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6406443d4c044552d33500c2_project-support-phase.png",
-    icons:
-      "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6400d2f6f9416639e1a49c3b_support-phase.png",
+    icon: "https://assets-global.website-files.com/63f8ca18cae25871c18fd72d/6400d2f6f9416639e1a49c3b_support-phase.png",
   },
 ];
 
