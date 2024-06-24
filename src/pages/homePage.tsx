@@ -21,6 +21,16 @@ const ImagesData = [
   { img: Image4 },
 ];
 
+interface WindowGTAG extends Window {
+  gtag?(
+    a1?: string,
+    a2?: string,
+    a3?: {
+      [key: string]: string;
+    }
+  ): void;
+}
+
 const HomePage = () => {
   const cardRefs = useRef<Array<React.MutableRefObject<HTMLDivElement | null>>>(
     []
@@ -132,6 +142,15 @@ const HomePage = () => {
                           className="w-full md:w-80 py-3 px-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-0 focus:border-transparent transition-transform transform hover:scale-105 duration-300 !border-r-0 rounded-r-none"
                         />
                         <Button
+                          onChange={() => {
+                            const windowModified = window as WindowGTAG;
+                            if (windowModified.gtag) {
+                              windowModified.gtag("config", "AW-16564940920");
+                              windowModified.gtag("event", "conversion", {
+                                send_to: "AW-16564940920/DiQpCL-_2rwZEPjg49o9",
+                              });
+                            }
+                          }}
                           type="submit"
                           className="py-[25px] md:py-[25px] px-4 md:px-8 shadow-lg bg-red-500 text-xs md:text-md text-white font-semibold rounded-lg transition-transform transform hover:scale-105 duration-300 rounded-l-none"
                         >
