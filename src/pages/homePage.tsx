@@ -26,22 +26,13 @@ const ImagesData = [
   { img: Image4 },
 ];
 
-interface WindowGTAG extends Window {
-  gtag?(
-    a1?: string,
-    a2?: string,
-    a3?: {
-      [key: string]: string;
-    }
-  ): void;
-}
 
 const HomePage = () => {
   const cardRefs = useRef<Array<React.MutableRefObject<HTMLDivElement | null>>>(
     []
   );
 
-  const [phoneNumber, setPhoneNumber] = useState(0);
+
 
   useEffect(() => {
     const handleScroll = () => {

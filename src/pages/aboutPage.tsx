@@ -4,20 +4,6 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { Button } from "@nextui-org/react";
 import { GlobeDemo } from "@/components/globleDemo";
 
-// Team members data
-const teamMembers = [
-  {
-    name: "John Doe",
-    role: "Founder & CEO",
-    image: "/team/member1.jpg", // Add your image paths
-    social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
-    }
-  },
-  // Add more team members...
-];
 
 // Company stats
 const stats = [
