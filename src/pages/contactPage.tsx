@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { SparklesCore } from "@/components/ui/sparkles";
 import ContainerWrapper from "@/components/containerWrapper";
 import { Button } from "@nextui-org/react";
+import { useState, useRef } from 'react';
 
 // Contact info data
 const contactInfo = [
@@ -12,8 +13,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Email",
-    value: "hello@company.com",
-    link: "mailto:hello@company.com"
+    value: "paswanaditya256@gmail.com",
+    link: "mailto:paswanaditya256@gmail.com"
   },
   {
     icon: (
@@ -22,8 +23,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Phone",
-    value: "+1 (555) 000-0000",
-    link: "tel:+15550000000"
+    value: "+91 8766258338",
+    link: "tel:+918766258338"
   },
   {
     icon: (
@@ -57,6 +58,58 @@ const budgetRanges = [
 ];
 
 const ContactPage = () => {
+  // Add form reference
+  const formRef = useRef<HTMLFormElement>(null);
+  
+  const [formStatus, setFormStatus] = useState<{
+    loading: boolean;
+    success: boolean;
+    error: string | null;
+  }>({
+    loading: false,
+    success: false,
+    error: null
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus({ loading: true, success: false, error: null });
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus({
+          loading: false,
+          success: true,
+          error: null
+        });
+        // Use formRef to reset
+        if (formRef.current) {
+          formRef.current.reset();
+        }
+      } else {
+        throw new Error(data.message || 'Form submission failed');
+      }
+    } catch (error) {
+      setFormStatus({
+        loading: false,
+        success: false,
+        error: error instanceof Error ? error.message : 'Something went wrong'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black pt-16 md:pt-0">
       {/* Background Effects */}
@@ -144,13 +197,24 @@ const ContactPage = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-2xl" />
                 <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
-                  <form className="space-y-6">
+                  <form 
+                    ref={formRef}
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                    noValidate
+                  >
+                    <input type="hidden" name="access_key" value="7a51a0fb-2360-494a-8ad5-4a41c3455f09"></input>
+                    <input type="hidden" name="from_name" value="Website Contact Form" />
+                    <input type="hidden" name="subject" value="New Contact Form Submission" />
+
                     {/* Name Field */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-400">First Name</label>
                         <input
                           type="text"
+                          name="first_name"
+                          required
                           placeholder="John"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
@@ -159,6 +223,8 @@ const ContactPage = () => {
                         <label className="text-sm font-medium text-gray-400">Last Name</label>
                         <input
                           type="text"
+                          name="last_name"
+                          required
                           placeholder="Doe"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
@@ -171,6 +237,8 @@ const ContactPage = () => {
                         <label className="text-sm font-medium text-gray-400">Email</label>
                         <input
                           type="email"
+                          name="email"
+                          required
                           placeholder="john@example.com"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
@@ -179,6 +247,8 @@ const ContactPage = () => {
                         <label className="text-sm font-medium text-gray-400">Phone</label>
                         <input
                           type="tel"
+                          name="phone"
+                          required
                           placeholder="+1 (555) 000-0000"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
@@ -191,6 +261,8 @@ const ContactPage = () => {
                         <label className="text-sm font-medium text-gray-400">Company</label>
                         <input
                           type="text"
+                          name="company"
+                          required
                           placeholder="Your Company Name"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
@@ -199,6 +271,8 @@ const ContactPage = () => {
                         <label className="text-sm font-medium text-gray-400">Your Role</label>
                         <input
                           type="text"
+                          name="role"
+                          required
                           placeholder="e.g. CEO, Manager, Developer"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
@@ -209,7 +283,11 @@ const ContactPage = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-400">Service Needed</label>
-                        <select className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20">
+                        <select 
+                          name="service" 
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        >
                           <option value="" className="bg-gray-900">Select a service</option>
                           {serviceOptions.map((service) => (
                             <option key={service} value={service} className="bg-gray-900">
@@ -220,7 +298,11 @@ const ContactPage = () => {
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-400">Budget Range</label>
-                        <select className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20">
+                        <select 
+                          name="budget" 
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        >
                           <option value="" className="bg-gray-900">Select budget range</option>
                           {budgetRanges.map((range) => (
                             <option key={range} value={range} className="bg-gray-900">
@@ -234,7 +316,11 @@ const ContactPage = () => {
                     {/* Project Timeline */}
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-gray-400">Project Timeline</label>
-                      <select className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20">
+                      <select 
+                        name="timeline" 
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                      >
                         <option value="" className="bg-gray-900">Select timeline</option>
                         <option value="immediate" className="bg-gray-900">Immediate</option>
                         <option value="1-3months" className="bg-gray-900">1-3 months</option>
@@ -248,20 +334,59 @@ const ContactPage = () => {
                       <label className="text-sm font-medium text-gray-400">Project Details</label>
                       <textarea
                         rows={6}
+                        name="description"
+                        required
                         placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                         className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                       />
                     </div>
+
+                    {/* Honeypot */}
+                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                     {/* Submit Button */}
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <Button className="w-full px-8 py-6 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
+                      <Button 
+                        type="submit"
+                        className="w-full px-8 py-6 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300"
+                      >
                         Send Message
                       </Button>
                     </motion.div>
+
+                    {/* Show status messages */}
+                    <div className="mt-4">
+                      {formStatus.loading && (
+                        <motion.p 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="text-blue-400 text-center p-3 rounded-lg bg-blue-400/10"
+                        >
+                          Sending message...
+                        </motion.p>
+                      )}
+                      {formStatus.success && (
+                        <motion.p 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="text-green-400 text-center p-3 rounded-lg bg-green-400/10"
+                        >
+                          Message sent successfully! We'll get back to you soon.
+                        </motion.p>
+                      )}
+                      {formStatus.error && (
+                        <motion.p 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="text-red-400 text-center p-3 rounded-lg bg-red-400/10"
+                        >
+                          {formStatus.error}
+                        </motion.p>
+                      )}
+                    </div>
                   </form>
                 </div>
               </motion.div>

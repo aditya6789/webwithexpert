@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import ContainerWrapper from "../containerWrapper";
 import Logo from "../../../public/logo-white.png";
@@ -11,10 +12,6 @@ const Footerlink = [
   {
     name: "Portfolio",
     href: "/work",
-  },
-  {
-    name: "Plans",
-    href: "/plan",
   },
   {
     name: "About",
@@ -54,6 +51,10 @@ const socialLinks = [
 
 const Footer = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <footer className="relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
@@ -110,9 +111,9 @@ const Footer = () => {
                 Contact Us
               </h3>
               <div className="space-y-4 text-gray-400">
-                <p>Email: hello@webwithexpert.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Location: New York, NY</p>
+                <p>Email: paswanaditya256@gmail.com</p>
+                <p>Phone: +91 8766258338</p>
+                <p>Location: New Delhi, India</p>
               </div>
             </div>
           </div>

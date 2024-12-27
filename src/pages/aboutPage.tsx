@@ -3,6 +3,7 @@ import ContainerWrapper from "@/components/containerWrapper";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { Button } from "@nextui-org/react";
 import { GlobeDemo } from "@/components/globleDemo";
+import { Link } from "react-router-dom";
 
 
 // Company stats
@@ -99,9 +100,11 @@ const AboutPage = () => {
                   transition={{ delay: 0.2 }}
                   className="flex gap-4"
                 >
-                  <Button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
+                <Link to="/contact">
+                <Button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
                     Get Started
                   </Button>
+                  </Link>
                   <Button className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-all duration-300">
                     Learn More
                   </Button>
@@ -325,9 +328,11 @@ const AboutPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
+               <Link to="/contact">
+               <Button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
                   Get in Touch
                 </Button>
+               </Link>
               </motion.div>
             </div>
           </ContainerWrapper>

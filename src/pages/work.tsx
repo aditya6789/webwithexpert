@@ -6,6 +6,7 @@ import Image1 from "../../public/images/marketing page.png";
 import Image2 from "../../public/images/marketing page  2.png";
 import Image3 from "../../public/images/marketing page 3.png";
 import Image4 from "../../public/images/marketing page 4.png";
+import { Link } from "react-router-dom";
 
 // Project data
 const projects = [
@@ -186,9 +187,11 @@ const WorkPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
+               <Link to="/contact">
+               <Button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
                   Get in Touch
                 </Button>
+               </Link>
               </motion.div>
             </div>
           </ContainerWrapper>

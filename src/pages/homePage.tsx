@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 // import { BackgroundBeams } from "@/components/ui/background-beams";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { Link } from "react-router-dom";
 
 const ImagesData = [
   { img: Image1 },
@@ -212,11 +213,13 @@ const HomePage = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button
+                 <Link to="/contact">
+                 <Button
                     className="px-8 h-[52px] bg-gradient-to-r from-red-500 to-purple-500 text-white font-medium rounded-2xl hover:opacity-90 transition-all duration-300 text-lg"
                   >
-                    Get Started
+                    Get Connected
                   </Button>
+                 </Link>
                 </motion.div>
 
                 {/* Alternative CTA */}
@@ -225,14 +228,17 @@ const HomePage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
+                    <Link to="/work">
                     <Button className="bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium rounded-xl px-8 py-4 hover:bg-white/10 transition-all duration-300">
                       View Our Work
                     </Button>
+                    </Link>
                   </motion.div>
                   
                   <span className="text-white/40">or</span>
                   
-                  <motion.a
+                <Link to="/work">
+                <motion.a
                     href="#portfolio"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -253,6 +259,7 @@ const HomePage = () => {
                       />
                     </svg>
                   </motion.a>
+                </Link>
                 </div>
 
                 {/* Trust Indicators */}
@@ -311,9 +318,11 @@ const HomePage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <Link to="/contact">
                 <Button className="bg-white/10 backdrop-blur-sm px-6 md:px-10 py-5 md:py-7 mt-5 md:mt-0 border border-white/20 hover:bg-white/20 transition-all duration-300 text-white">
                   Get In Touch
                 </Button>
+                </Link>
               </motion.div>
             </motion.div>
             <div className="relative z-10">
@@ -354,9 +363,11 @@ const HomePage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-gradient-to-r from-red-500 to-purple-500 px-6 md:px-10 py-5 md:py-7 mt-5 md:mt-0 text-white shadow-xl hover:shadow-red-500/25 transition-all duration-300">
+                <Link to="/contact">
+                
+                <Button className="bg-white/10 backdrop-blur-sm px-6 md:px-10 py-5 md:py-7 mt-5 md:mt-0 border border-white/20 hover:bg-white/20 transition-all duration-300 text-white">
                   Get In Touch
-                </Button>
+                </Button></Link>
               </motion.div>
             </motion.div>
             <motion.div 
@@ -531,14 +542,18 @@ const HomePage = () => {
               className="flex flex-col md:flex-row justify-center gap-6 items-center my-20"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact">
                 <Button className="bg-gradient-to-r from-red-500 to-purple-500 px-8 md:px-12 py-6 md:py-8 text-white rounded-xl text-md md:text-lg shadow-xl hover:shadow-red-500/25 transition-all duration-300">
                   Get in Touch
                 </Button>
+                </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/work">
                 <Button className="bg-white/10 backdrop-blur-sm border border-white/20 px-8 md:px-12 py-6 md:py-8 text-white rounded-xl text-md md:text-lg shadow-xl hover:bg-white/20 transition-all duration-300">
                   Browse Our Portfolio
                 </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
