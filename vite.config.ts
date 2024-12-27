@@ -18,7 +18,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'framer-motion': ['framer-motion'],
-          'three-vendor': ['three', 'three-stdlib'],
+          'three-vendor': ['three', 'three-stdlib']
         }
       }
     }
@@ -31,5 +31,8 @@ export default defineConfig({
     logOverride: {
       'this-is-undefined-in-esm': 'silent'
     }
+  },
+  ssr: {
+    noExternal: ['@nextui-org/react']
   }
 })
